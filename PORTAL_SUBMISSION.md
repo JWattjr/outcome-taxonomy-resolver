@@ -6,7 +6,7 @@
 
 ## Notes / Description
 
-Built and deployed an MIT-licensed Outcome Taxonomy Resolver for reusable multi-outcome prediction markets. Deployment freezes criterion definitions, mutually exclusive category conjunctions, optional fallback, official HTTPS sources, cutoff, maximum wait, and spec ID. Validators independently re-fetch evidence and agree on an exact ordered criterion vector; deterministic contract code selects the category, so an LLM cannot invent a payout label. The constructor rejects satisfiable overlaps between non-fallback categories. Missing evidence stays WAIT, authoritative conflict becomes CONTESTED, and cancellation/max-wait becomes VOID. Includes pinned GenVM source, overlap and malicious-leader tests, full schema validation, security audit, test matrix, and finalized StudioNet deployment/consensus evidence. It does not custody market funds.
+Built and deployed an MIT-licensed Outcome Taxonomy Resolver for reusable multi-outcome prediction markets. Deployment freezes criterion definitions, mutually exclusive category conjunctions, optional fallback, official HTTPS sources, cutoff, maximum wait, and spec ID. Validators independently re-fetch evidence and agree on an exact ordered criterion vector; deterministic contract code selects the category, so an LLM cannot invent a payout label. The constructor rejects satisfiable overlaps between non-fallback categories. Missing evidence stays WAIT, authoritative conflict becomes CONTESTED, and cancellation/max-wait becomes VOID. Includes pinned GenVM source, overlap and malicious-leader tests, full schema validation, security audit, test matrix, and finalized StudioNet/Bradbury deployment/consensus evidence. It does not custody market funds.
 
 ## Evidence to add
 

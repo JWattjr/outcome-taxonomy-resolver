@@ -4,6 +4,7 @@
   "chain_id": 61999,
   "deployer": "0x2C8EB5dB1105A85BE66BadafeD88D10cF393CDD8",
   "source_file": "contracts/OutcomeTaxonomyResolver.py",
+  "source_commit": "ad8fbe4f5e9e3cf663568e367366f1ae955749b6",
   "contract_address": "0x6711568eeE29CD3F8B4050Ac069d72211bDC104E",
   "deployment_transaction": "0x6b20939d1f9c001cc81559d3f8d31f38b5e4e0edd0cc566bfcb8efea2f2a9e85",
   "explorer_url": "https://explorer-studio.genlayer.com/address/0x6711568eeE29CD3F8B4050Ac069d72211bDC104E",
