@@ -1,6 +1,8 @@
 {
   "contract": "OutcomeTaxonomyResolver",
   "network": "studionet",
+  "evidence_status": "historical_pre_hardening",
+  "evidence_note": "This record is for source_commit ad8fbe4f5e9e3cf663568e367366f1ae955749b6 before the September 2026 hardening pass; it is not current deployment evidence.",
   "chain_id": 61999,
   "deployer": "0x2C8EB5dB1105A85BE66BadafeD88D10cF393CDD8",
   "source_file": "contracts/OutcomeTaxonomyResolver.py",

@@ -12,6 +12,8 @@ EXPECTED_STATE = {"state":"RESOLVED","category_id":"ENACTED"}
 def test_studionet_manifest_records_successful_finalized_execution():
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     assert data["network"] == "studionet"
+    assert data["evidence_status"] == "historical_pre_hardening"
+    assert data["source_commit"] == "ad8fbe4f5e9e3cf663568e367366f1ae955749b6"
     assert data["deployment_status"] == "FINALIZED"
     assert data["deployment_execution"] == "SUCCESS"
     assert data["consensus_test_status"] == "FINALIZED"

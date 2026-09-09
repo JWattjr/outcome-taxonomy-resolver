@@ -8,14 +8,14 @@
   "deployment_transaction": "REPLACE_WITH_TX_HASH",
   "explorer_url": "https://explorer-bradbury.genlayer.com/address/REPLACE_WITH_ADDRESS",
   "constructor_args": [
-    "pl117-58-status",
-    "What was the final official status of H.R. 3684 in the 117th Congress?",
-    "[{\"id\":\"ENACTED\",\"label\":\"Became law\",\"required_true\":[\"became_law\"],\"required_false\":[],\"fallback\":false},{\"id\":\"NOT_ENACTED\",\"label\":\"Did not become law\",\"required_true\":[],\"required_false\":[\"became_law\"],\"fallback\":false}]",
-    "[{\"id\":\"became_law\",\"description\":\"The official GovInfo record identifies H.R. 3684 as Public Law 117-58 with an approval date.\"}]",
+    "pl117-58-status-v2",
+    "What was the final official disposition of H.R. 3684 in the 117th Congress?",
+    "[{\"id\":\"ENACTED\",\"label\":\"Became law\",\"required_true\":[\"became_law\"],\"required_false\":[\"failed_in_congress\",\"no_final_disposition\"],\"fallback\":false},{\"id\":\"NOT_ENACTED\",\"label\":\"Did not become law\",\"required_true\":[\"failed_in_congress\"],\"required_false\":[\"became_law\",\"no_final_disposition\"],\"fallback\":false},{\"id\":\"NO_RESULT\",\"label\":\"No final disposition\",\"required_true\":[\"no_final_disposition\"],\"required_false\":[\"became_law\",\"failed_in_congress\"],\"fallback\":false}]",
+    "[{\"id\":\"became_law\",\"description\":\"The official GovInfo record identifies H.R. 3684 as Public Law 117-58 with an approval date.\"},{\"id\":\"failed_in_congress\",\"description\":\"An authoritative congressional record explicitly states that H.R. 3684 failed or was rejected before enactment.\"},{\"id\":\"no_final_disposition\",\"description\":\"An authoritative record explicitly states that H.R. 3684 had no final disposition by the cutoff.\"}]",
     "[\"https://www.govinfo.gov/app/details/PLAW-117publ58/summary\"]",
-    "2026-01-01T00:00:00Z",
-    "2030-01-01T00:00:00Z",
-    "outcome-taxonomy-pl117-58-v1"
+    "2024-01-01T00:00:00Z",
+    "2027-01-01T00:00:00Z",
+    "outcome-taxonomy-pl117-58-v2"
   ],
   "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
   "deployed_at_utc": "REPLACE_WITH_ISO_TIMESTAMP"
