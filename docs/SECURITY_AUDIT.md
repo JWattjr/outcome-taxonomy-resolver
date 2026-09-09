@@ -1,8 +1,9 @@
 # Security and consensus audit: OutcomeTaxonomyResolver
 
 Audit scope: contracts/OutcomeTaxonomyResolver.py
-Review status: hardened working tree; fresh StudioNet deployment still required
-before submission.
+Review status: hardened source deployed and finalized on StudioNet; the
+current receipt and read-back evidence are recorded in
+deployments/studionet.json.
 
 ## Boundary
 
@@ -38,8 +39,9 @@ invent categories, fallback requirements, or payout labels.
 - Offline direct tests exercise the named invariants in
   tests/test_outcome_taxonomy.py and closure isolation in
   tests/test_nondet_storage.py.
-- The integration manifest test only checks the recorded historical manifest;
-  it is not evidence that the hardened source is deployed.
+- The StudioNet integration manifest test records the current hardened source,
+  finalized deployment/resolve receipts, and read-back state. Bradbury remains
+  a historical pre-hardening record.
 
 ## Residual risks and limitations
 
@@ -56,6 +58,6 @@ scope.
 
 The cutoff is the earliest assessment time. The contract does not enforce that a
 document reflects a historical as-of state. At or after max_wait it records a
-deterministic terminal VOID result. Existing deployments/studionet.json and
-deployments/bradbury.json are pre-hardening historical records and must not be
-represented as current evidence.
+deterministic terminal VOID result. `deployments/studionet.json` is current
+hardened-source evidence; `deployments/bradbury.json` remains a pre-hardening
+historical record and must not be represented as current evidence.

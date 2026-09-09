@@ -1,7 +1,7 @@
 # GenLayer Portal submission draft
 
-Status: do not submit yet. The hardened source has not been redeployed to
-StudioNet, and the existing deployment records are explicitly historical.
+Status: ready for Portal review. The hardened source is deployed and finalized
+on StudioNet; the receipt and read-back state are recorded below.
 
 Contribution type: Builder → Intelligent Contracts
 Title: Outcome Taxonomy Resolver
@@ -25,10 +25,10 @@ The contract holds no funds and is intended to feed a finality-aware consumer.
 
 The reviewed source includes bounded constructor inputs, exact-type and
 state-consistency validation, adversarial direct tests, and a pinned GenVM
-runner. A fresh StudioNet deployment and finalized read-back are required
-before this copy is submitted.
+runner. The current source commit is deployed and finalized on StudioNet with
+five validator votes and a successful resolve/read-back.
 
-## Evidence to add after redeployment
+## Current evidence
 
 1. GitHub Repository — https://github.com/JWattjr/outcome-taxonomy-resolver
 2. GitHub File — https://github.com/JWattjr/outcome-taxonomy-resolver/blob/main/contracts/OutcomeTaxonomyResolver.py
@@ -37,7 +37,10 @@ before this copy is submitted.
 5. GitHub File — https://github.com/JWattjr/outcome-taxonomy-resolver/blob/main/docs/SECURITY_AUDIT.md
 6. GitHub File — https://github.com/JWattjr/outcome-taxonomy-resolver/blob/main/docs/TEST_MATRIX.md
 7. GitHub File — https://github.com/JWattjr/outcome-taxonomy-resolver/blob/main/deployments/studionet.json
-8. GenLayer Explorer Contract — add the fresh StudioNet address
+8. GenLayer Explorer Contract — https://explorer-studio.genlayer.com/address/0x095abFA6c2DD73Bb2a60786e283f82FD4e997cAa
+9. Deployment transaction — `0x7580aee999c75b217013f110375c9bb636d729a3bab619e2ac581e656ab795d5`
+10. Resolve transaction — `0x52f2d38528aa1369b728514382aa1eee35ff3a02942e950852d7bf178d0da761`
+11. Source commit — `474543505923cfa1008445046d9ad6788cc655f3`
 
 Confirm that the repository is public and that every link resolves before
 submission. Do not attach the old Bradbury deployment as current evidence.
@@ -73,5 +76,5 @@ deterministic; NO_RESULT requires an explicitly evidenced final disposition:
 
 The GovInfo Public Law 117-58 summary is a completed, public, authoritative
 record and the cutoff is already past. HTTPS shape checks still do not prove
-publisher authority. A fresh deployment must record the exact constructor JSON,
-source commit, finalized receipts, and read-back state.
+publisher authority. The current deployment record contains the exact
+constructor JSON, source commit, finalized receipts, and read-back state.

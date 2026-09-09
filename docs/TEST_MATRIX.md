@@ -37,7 +37,7 @@ genvm-lint check contracts/OutcomeTaxonomyResolver.py
 python -m pytest tests -q
 ~~~
 
-The integration manifest tests do not validate the hardened source on a live
-network. After changes, deploy to StudioNet, wait for protocol finality and
-successful execution, read back get_state, and replace the historical manifest
-with a clearly versioned current record.
+The StudioNet manifest test records the current hardened source, finalized
+deployment/resolve receipts, and read-back state; the Bradbury manifest remains
+historical. The optional live StudioNet test can independently re-read the
+address when `GENLAYER_INTEGRATION=1` is set.

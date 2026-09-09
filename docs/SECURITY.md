@@ -54,6 +54,6 @@ External documents can be ambiguous or change between validator fetches, so
 consensus may remain contested or retryable. Offline mocks exercise schema and
 state invariants but cannot prove real-model prompt-injection resistance.
 Downstream consumers must wait for GenLayer finality and implement their own
-authorization, payout, and idempotency guards. Existing deployment manifests
-are historical pre-hardening evidence until a fresh StudioNet deployment is
-verified.
+authorization, payout, and idempotency guards. `deployments/studionet.json`
+records the current hardened deployment; the Bradbury record remains
+historical pre-hardening evidence.

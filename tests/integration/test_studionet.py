@@ -6,14 +6,14 @@ import pytest
 
 
 MANIFEST = Path("deployments/studionet.json")
-EXPECTED_STATE = {"state":"RESOLVED","category_id":"ENACTED"}
+EXPECTED_STATE = {"state": "RESOLVED", "category_id": "ENACTED", "reason_code": "CATEGORY_MATCH"}
 
 
 def test_studionet_manifest_records_successful_finalized_execution():
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     assert data["network"] == "studionet"
-    assert data["evidence_status"] == "historical_pre_hardening"
-    assert data["source_commit"] == "ad8fbe4f5e9e3cf663568e367366f1ae955749b6"
+    assert data["evidence_status"] == "current_hardened"
+    assert data["source_commit"] == "474543505923cfa1008445046d9ad6788cc655f3"
     assert data["deployment_status"] == "FINALIZED"
     assert data["deployment_execution"] == "SUCCESS"
     assert data["consensus_test_status"] == "FINALIZED"
@@ -22,6 +22,24 @@ def test_studionet_manifest_records_successful_finalized_execution():
     assert data["deployment_transaction"].startswith("0x")
     for field, value in EXPECTED_STATE.items():
         assert data["consensus_test_state"][field] == value
+    assert data["consensus_test_state"]["criteria_order"] == [
+        "became_law",
+        "failed_in_congress",
+        "no_final_disposition",
+    ]
+    assert data["consensus_test_state"]["criterion_results"] == {
+        "became_law": "SATISFIED",
+        "failed_in_congress": "UNSATISFIED",
+        "no_final_disposition": "UNSATISFIED",
+    }
+    assert data["consensus_receipt_summary"]["consensus_result"] == "MAJORITY_AGREE"
+    assert data["consensus_receipt_summary"]["validator_votes"] == [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "DISAGREE",
+        "DISAGREE",
+    ]
 
 
 @pytest.mark.slow

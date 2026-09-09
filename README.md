@@ -97,17 +97,14 @@ python -m pytest tests -q
 ~~~
 
 The direct suite uses offline, reproducible mocks and captured validator
-execution. It cannot prove real-model prompt-injection resistance or live
-network behavior. tests/integration/ currently verifies recorded manifest
-shape; a fresh StudioNet deployment and live read-back are still required for
-the hardened source.
+execution. It cannot prove real-model prompt-injection resistance or every
+possible live-network behavior. The current StudioNet deployment and finalized
+resolve/read-back receipt are recorded in `deployments/studionet.json`.
 
 ## Deployment evidence
 
-deployments/studionet.json and deployments/bradbury.json are preserved
-historical records for source commit
-ad8fbe4f5e9e3cf663568e367366f1ae955749b6 before this hardening pass. They must
-not be presented as evidence for the current source. Deploy the hardened source
-to StudioNet, verify finalized successful deployment and resolution receipts,
-and record the new commit, constructor arguments, address, hashes, and
-read-back state before submitting.
+`deployments/studionet.json` is the current hardened-source record for commit
+`474543505923cfa1008445046d9ad6788cc655f3`, including finalized deployment and
+resolve receipts plus the read-back state. `deployments/bradbury.json` remains
+a clearly marked historical pre-hardening record and must not be presented as
+current evidence.
