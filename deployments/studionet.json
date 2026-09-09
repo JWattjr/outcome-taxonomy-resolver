@@ -10,7 +10,7 @@
   "source_commit": "474543505923cfa1008445046d9ad6788cc655f3",
   "contract_address": "0x095abFA6c2DD73Bb2a60786e283f82FD4e997cAa",
   "deployment_transaction": "0x7580aee999c75b217013f110375c9bb636d729a3bab619e2ac581e656ab795d5",
-  "explorer_url": "https://explorer-studio.genlayer.com/address/0x095abFA6c2DD73Bb2a60786e283f82FD4e997cAa",
+  "explorer_url": "https://genlayer-explorer.vercel.app/address/0x095abFA6c2DD73Bb2a60786e283f82FD4e997cAa",
   "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
   "constructor_args": [
     "pl117-58-status-v2",
