@@ -14,7 +14,9 @@ Unchecked leader fields are never serialized into storage.
 - Malicious leaders: validators re-fetch evidence and recompute every
   state-affecting result field.
 - Prompt injection: source text is bounded and explicitly treated as untrusted
-  data; embedded instructions cannot change deterministic taxonomy selection.
+  data; deterministic taxonomy derivation prevents arbitrary model-selected
+  categories, but this does not guarantee real-model prompt-injection
+  resistance.
 - Source outage and drift: transport failures and non-200 responses are
   unavailable; an all-source outage returns WAIT with UNKNOWN criteria.
 - Partial or truncated evidence: incomplete material is labeled in the prompt;

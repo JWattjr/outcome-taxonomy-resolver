@@ -15,9 +15,11 @@ contract code—not a model—matches that vector to the frozen categories. A
 conventional contract could store a user-supplied label, but it could not
 independently interpret arbitrary public evidence at the state transition.
 
-Evidence is untrusted data, never instructions. The prompt marks unavailable
-and truncated material as incomplete and tells the model not to infer negative
-facts from it. An all-source outage deterministically forces WAIT; partial or
+Evidence is treated as untrusted data. The prompt marks unavailable and
+truncated material as incomplete and tells the model not to follow embedded
+instructions or infer negative facts from it. This bounds the contract and
+consensus boundary but does not guarantee real-model prompt-injection
+resistance. An all-source outage deterministically forces WAIT; partial or
 truncated evidence does not mechanically force WAIT when validators agree that
 the remaining material is sufficient, but an insufficient criterion must stay
 UNKNOWN. HTTPS, hostname, port, length, and public-IP checks constrain the
@@ -105,6 +107,18 @@ resolve/read-back receipt are recorded in `deployments/studionet.json`.
 
 `deployments/studionet.json` is the current hardened-source record for commit
 `474543505923cfa1008445046d9ad6788cc655f3`, including finalized deployment and
-resolve receipts plus the read-back state. `deployments/bradbury.json` remains
-a clearly marked historical pre-hardening record and must not be presented as
-current evidence.
+resolve receipts plus the read-back state. Independent read-only StudioNet RPC
+verification on 2026-09-10 confirmed both receipts as FINALIZED with SUCCESS
+execution, the manifest contract address, and the recorded `get_state()`.
+The deployment was unanimous (5 AGREE); the resolve was MAJORITY_AGREE (3
+AGREE, 2 DISAGREE), not unanimous. `gen_getContractCode` returned source whose
+normalized UTF-8 SHA-256 is
+`86697000c51a0c93b012c9f3a040feede2436501294616250dc2f4ae6e96bfd2`, matching
+the local source and commit `4745435...`; this verifies source identity, not
+EVM bytecode identity. `deployments/bradbury.json` remains a clearly marked
+historical pre-hardening record and must not be presented as current evidence.
+
+The configured GitHub origin returned HTTP 404 to unauthenticated public
+requests, and the configured Explorer URL returned HTTP 503 on the same date.
+GovInfo and the supplemental Congress report were reachable. Do not submit the
+GitHub or Explorer links until those public evidence links resolve.

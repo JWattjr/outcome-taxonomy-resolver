@@ -1,7 +1,10 @@
 # GenLayer Portal submission draft
 
-Status: ready for Portal review. The hardened source is deployed and finalized
-on StudioNet; the receipt and read-back state are recorded below.
+Status: blocked pending public evidence links. The hardened source is deployed
+and independently verified on StudioNet, but the configured GitHub URLs return
+HTTP 404 to unauthenticated public requests and the Explorer host returned HTTP
+503 on 2026-09-10. Do not submit until the repository is public and the public
+evidence links resolve.
 
 Contribution type: Builder → Intelligent Contracts
 Title: Outcome Taxonomy Resolver
@@ -25,8 +28,11 @@ The contract holds no funds and is intended to feed a finality-aware consumer.
 
 The reviewed source includes bounded constructor inputs, exact-type and
 state-consistency validation, adversarial direct tests, and a pinned GenVM
-runner. The current source commit is deployed and finalized on StudioNet with
-five validator votes and a successful resolve/read-back.
+runner. The source commit is deployed and finalized on StudioNet. Deployment
+reached 5/5 AGREE; the recorded resolve reached MAJORITY_AGREE with 3 AGREE
+and 2 DISAGREE, followed by a successful read-back. This design does not
+guarantee real-model prompt-injection resistance. The cutoff is the earliest
+assessment time, not an enforced historical as-of evidence boundary.
 
 ## Current evidence
 
@@ -41,9 +47,24 @@ five validator votes and a successful resolve/read-back.
 9. Deployment transaction — `0x7580aee999c75b217013f110375c9bb636d729a3bab619e2ac581e656ab795d5`
 10. Resolve transaction — `0x52f2d38528aa1369b728514382aa1eee35ff3a02942e950852d7bf178d0da761`
 11. Source commit — `474543505923cfa1008445046d9ad6788cc655f3`
+12. Supplemental official Congress report — https://www.congress.gov/117/crpt/hrpt694/CRPT-117hrpt694.pdf
 
-Confirm that the repository is public and that every link resolves before
-submission. Do not attach the old Bradbury deployment as current evidence.
+## Independent verification record (2026-09-10)
+
+- Both recorded transactions returned `FINALIZED` with `SUCCESS` execution and
+  the manifest contract address from read-only StudioNet RPC.
+- `get_state()` matched the manifest: `RESOLVED`, `ENACTED`,
+  `CATEGORY_MATCH`, source coverage `1`, and the recorded criterion mapping.
+- `gen_getContractCode` returned source exactly matching the local source and
+  commit `474543505923cfa1008445046d9ad6788cc655f3` after newline normalization.
+  This verifies deployed source identity; it does not claim EVM bytecode
+  identity.
+- Public checks returned HTTP 404 for the configured GitHub repository/files,
+  HTTP 503 for the Explorer host, and HTTP 200 for GovInfo and the supplemental
+  Congress report. These GitHub/Explorer checks are the remaining submission
+  blocker.
+
+Do not attach the old Bradbury deployment as current evidence.
 
 ## Three-outcome constructor demonstration
 

@@ -1,9 +1,12 @@
 # Security and consensus audit: OutcomeTaxonomyResolver
 
 Audit scope: contracts/OutcomeTaxonomyResolver.py
-Review status: hardened source deployed and finalized on StudioNet; the
-current receipt and read-back evidence are recorded in
-deployments/studionet.json.
+Review status: hardened source deployed and finalized on StudioNet. Independent
+read-only RPC verification on 2026-09-10 confirmed the recorded receipts,
+contract address, source identity, and read-back state. Public GitHub evidence
+is currently not reachable without authentication (HTTP 404), and the Explorer
+host returned HTTP 503; Portal submission is therefore blocked pending public
+link availability.
 
 ## Boundary
 
@@ -39,16 +42,28 @@ invent categories, fallback requirements, or payout labels.
 - Offline direct tests exercise the named invariants in
   tests/test_outcome_taxonomy.py and closure isolation in
   tests/test_nondet_storage.py.
-- The StudioNet integration manifest test records the current hardened source,
-  finalized deployment/resolve receipts, and read-back state. Bradbury remains
-  a historical pre-hardening record.
+- The StudioNet integration manifest test checks the current hardened source,
+  receipt fields, and read-back state recorded in the manifest; it is not a
+  substitute for a live receipt query. Independent StudioNet RPC verification
+  confirmed both transactions as FINALIZED with SUCCESS execution, matching
+  contract address, and the recorded state. Deployment votes were 5 AGREE; the
+  resolve was MAJORITY_AGREE with 3 AGREE and 2 DISAGREE. Bradbury remains a
+  historical pre-hardening record.
+- `gen_getContractCode` returned source that exactly matched the local source
+  and source commit `474543505923cfa1008445046d9ad6788cc655f3` after newline
+  normalization. This verifies source identity; no EVM bytecode identity claim
+  is made for StudioNet.
+- Public-link checks on 2026-09-10 returned HTTP 404 for the configured GitHub
+  repository/files, HTTP 503 for the Explorer host, and HTTP 200 for GovInfo
+  and the supplemental Congress report.
 
 ## Residual risks and limitations
 
 HTTPS/hostname/public-IP checks are bounded URL-shape checks. They do not prove
 publisher authority, eliminate DNS rebinding, or prevent all network attacks.
-Documents and model output remain untrusted. Mocked responses cannot prove
-real-model prompt-injection resistance. Partial or truncated evidence may still
+Documents and model output remain untrusted. Bounded prompts and deterministic
+category derivation do not guarantee real-model prompt-injection resistance.
+Mocked responses cannot prove that property. Partial or truncated evidence may still
 yield a consensus result only when the validators agree that the remaining
 material is sufficient and the deterministic taxonomy permits it; an unavailable
 fact must never be treated as UNSATISFIED by this contract. If the material is

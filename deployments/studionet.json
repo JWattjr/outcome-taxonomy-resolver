@@ -62,5 +62,37 @@
     "votes_revealed": "5",
     "validator_votes": ["AGREE", "AGREE", "AGREE", "DISAGREE", "DISAGREE"],
     "validator_count": 5
+  },
+  "independent_verification": {
+    "verified_at_utc": "2026-09-10T18:45:36Z",
+    "method": "read-only StudioNet JSON-RPC",
+    "deployment_receipt": {
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "to_address_matches_manifest": true,
+      "validator_votes": ["AGREE", "AGREE", "AGREE", "AGREE", "AGREE"]
+    },
+    "resolve_receipt": {
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "to_address_matches_manifest": true,
+      "consensus_result": "MAJORITY_AGREE",
+      "validator_votes": ["AGREE", "AGREE", "AGREE", "DISAGREE", "DISAGREE"]
+    },
+    "get_state_matches_manifest": true,
+    "deployed_source": {
+      "method": "gen_getContractCode",
+      "normalized_utf8_sha256": "86697000c51a0c93b012c9f3a040feede2436501294616250dc2f4ae6e96bfd2",
+      "matches_local_source": true,
+      "matches_source_commit": true,
+      "bytecode_identity_verified": false,
+      "note": "StudioNet source identity was verified; no EVM bytecode identity claim is made."
+    },
+    "public_link_checks": {
+      "github_origin_and_files": "HTTP_404_UNAUTHENTICATED_NOT_PUBLICLY_REACHABLE",
+      "genlayer_explorer": "HTTP_503_PENDING",
+      "govinfo": "HTTP_200",
+      "congress_report": "HTTP_200"
+    }
   }
 }

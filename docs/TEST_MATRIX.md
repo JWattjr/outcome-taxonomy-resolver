@@ -37,7 +37,9 @@ genvm-lint check contracts/OutcomeTaxonomyResolver.py
 python -m pytest tests -q
 ~~~
 
-The StudioNet manifest test records the current hardened source, finalized
-deployment/resolve receipts, and read-back state; the Bradbury manifest remains
-historical. The optional live StudioNet test can independently re-read the
-address when `GENLAYER_INTEGRATION=1` is set.
+The StudioNet manifest test checks the current hardened source, recorded
+finalized deployment/resolve receipt fields, and read-back state; it is not a
+live receipt verification. Independent read-only RPC verification is recorded
+in the audit and Portal draft. The Bradbury manifest remains historical. The
+optional live StudioNet test can independently re-read the address when
+`GENLAYER_INTEGRATION=1` is set.
