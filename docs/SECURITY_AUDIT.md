@@ -3,10 +3,10 @@
 Audit scope: contracts/OutcomeTaxonomyResolver.py
 Review status: hardened source deployed and finalized on StudioNet. Independent
 read-only RPC verification on 2026-09-10 confirmed the recorded receipts,
-contract address, source identity, and read-back state. Public GitHub evidence
-is currently not reachable without authentication (HTTP 404), and the Explorer
-host returned HTTP 503; Portal submission is therefore blocked pending public
-link availability.
+contract address, source identity, and read-back state. A subsequent anonymous
+public-link check confirmed HTTP 200 responses for the repository, referenced
+files, official Studio Explorer contract/transaction pages, GovInfo, and the
+supplemental Congress report. The evidence packet is ready for Portal review.
 
 ## Boundary
 
@@ -53,9 +53,10 @@ invent categories, fallback requirements, or payout labels.
   and source commit `474543505923cfa1008445046d9ad6788cc655f3` after newline
   normalization. This verifies source identity; no EVM bytecode identity claim
   is made for StudioNet.
-- Public-link checks on 2026-09-10 returned HTTP 404 for the configured GitHub
-  repository/files, HTTP 503 for the Explorer host, and HTTP 200 for GovInfo
-  and the supplemental Congress report.
+- Public-link rechecks on 2026-09-10 returned HTTP 200 for the configured GitHub
+  repository/files, official Studio Explorer contract/transaction pages,
+  GovInfo, and the supplemental Congress report. The unavailable legacy
+  Explorer URL was replaced with the live official Studio Explorer.
 
 ## Residual risks and limitations
 

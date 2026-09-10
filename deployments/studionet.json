@@ -10,7 +10,9 @@
   "source_commit": "474543505923cfa1008445046d9ad6788cc655f3",
   "contract_address": "0x095abFA6c2DD73Bb2a60786e283f82FD4e997cAa",
   "deployment_transaction": "0x7580aee999c75b217013f110375c9bb636d729a3bab619e2ac581e656ab795d5",
-  "explorer_url": "https://genlayer-explorer.vercel.app/address/0x095abFA6c2DD73Bb2a60786e283f82FD4e997cAa",
+  "explorer_url": "https://explorer-studio.genlayer.com/contracts/0x095abFA6c2DD73Bb2a60786e283f82FD4e997cAa",
+  "deployment_explorer_url": "https://explorer-studio.genlayer.com/transactions/0x7580aee999c75b217013f110375c9bb636d729a3bab619e2ac581e656ab795d5",
+  "resolve_explorer_url": "https://explorer-studio.genlayer.com/transactions/0x52f2d38528aa1369b728514382aa1eee35ff3a02942e950852d7bf178d0da761",
   "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
   "constructor_args": [
     "pl117-58-status-v2",
@@ -88,9 +90,10 @@
       "bytecode_identity_verified": false,
       "note": "StudioNet source identity was verified; no EVM bytecode identity claim is made."
     },
+    "public_link_checks_verified_at_utc": "2026-09-10T19:50:58Z",
     "public_link_checks": {
-      "github_origin_and_files": "HTTP_404_UNAUTHENTICATED_NOT_PUBLICLY_REACHABLE",
-      "genlayer_explorer": "HTTP_503_PENDING",
+      "github_origin_and_files": "HTTP_200",
+      "studio_explorer_contract_and_transactions": "HTTP_200",
       "govinfo": "HTTP_200",
       "congress_report": "HTTP_200"
     }

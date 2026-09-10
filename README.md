@@ -118,7 +118,8 @@ the local source and commit `4745435...`; this verifies source identity, not
 EVM bytecode identity. `deployments/bradbury.json` remains a clearly marked
 historical pre-hardening record and must not be presented as current evidence.
 
-The configured GitHub origin returned HTTP 404 to unauthenticated public
-requests, and the configured Explorer URL returned HTTP 503 on the same date.
-GovInfo and the supplemental Congress report were reachable. Do not submit the
-GitHub or Explorer links until those public evidence links resolve.
+Public-link verification on 2026-09-10 confirmed HTTP 200 responses for the
+repository and referenced GitHub files, the official Studio Explorer contract
+and transaction pages, GovInfo, and the supplemental Congress report. The
+unavailable legacy Explorer URL was replaced with the live Studio Explorer at
+`https://explorer-studio.genlayer.com/`.
